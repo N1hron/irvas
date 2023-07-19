@@ -942,11 +942,14 @@ textarea:focus {
   display: inline-block;
 }
 
+.balcon_icons_img img{
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
 .do_image_more img{
-    width: 110px;
-    height: 70px;
-    cursor: pointer;
-  }
+    scale: 1.3;
+}
 
 .popup_calc_close {
   position: absolute;

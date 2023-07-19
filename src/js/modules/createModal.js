@@ -1,5 +1,5 @@
-export default function modals() {
-    function bindModals(triggerSelector, modalSelector, closeSelector) {
+export default function createModal(triggerSelector, modalSelector, closeSelector, closeOnOverlayClick = true) {
+    function bindModal() {
         const triggers = document.querySelectorAll(triggerSelector),
               modal = document.querySelector(modalSelector),
               close = modal.querySelector(closeSelector)
@@ -11,29 +11,37 @@ export default function modals() {
             })
         })
 
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) hideModal(modal)
-        })
-
         close.addEventListener('click', () => hideModal(modal))
+
+        if (closeOnOverlayClick) {
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) hideModal(modal)
+            })
+        }
+
+        function showModalAfterTime(time) {
+            setTimeout(() => showModal(modal), time)
+        }
+
+        return { showModalAfterTime }
     }
 
     function showModal(modal) {
+        hideAllModals()
+        modal.classList.add('fadeIn')
         modal.style.display = 'block'
         document.body.style.overflow = 'hidden'
     }
 
     function hideModal(modal) {
+        modal.classList.remove('fadeIn')
         modal.style.display = 'none'
         document.body.style.overflow = 'auto'
     }
 
-    function showModalAfterTime(modalSelector, time) {
-        const modal = document.querySelector(modalSelector)
-        setTimeout(() => showModal(modal), time)
+    function hideAllModals() {
+        document.querySelectorAll('[data-modal]').forEach(modal => hideModal(modal))
     }
 
-    bindModals('.popup_engineer_btn', '.popup_engineer', '.popup_close')
-    bindModals('.phone_link', '.popup', '.popup_close')
-    showModalAfterTime('.popup', 60000)
+    return bindModal()
 }
