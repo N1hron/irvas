@@ -9,9 +9,8 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-    <!-- Slick Slider -->
-    <link rel="stylesheet" href="assets/slick/slick.css">
-    <link rel="stylesheet" href="assets/slick/slick-theme.css">
+    <!-- Tiny Slider -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <!-- Animate -->
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link href="assets/css/style.css" rel="stylesheet">
@@ -132,26 +131,30 @@
 
         <!-- Slider -->
         <div class="glazing_slider">
-          <div class="glazing_block text-center wow fadeInUp">
-            <img src="assets/img/glazing/icons/1.png" alt="#">
-            <a class="tree_link">Деревянное <br>остекление</a>
+          <button class="prev arrow"></button>
+          <div class="slides">
+            <div class="glazing_block text-center wow fadeInUp">
+              <img src="assets/img/glazing/icons/1.png" alt="#">
+              <a class="tree_link">Деревянное <br>остекление</a>
+            </div>
+            <div class="glazing_block text-center wow fadeInUp" data-wow-delay="0.1s">
+              <img src="assets/img/glazing/icons/2.png" alt="#">
+              <a class="aluminum_link">Алюминиевое <br>остекление</a>
+            </div>
+            <div class="glazing_block text-center wow fadeInUp" data-wow-delay="0.2s">
+              <img src="assets/img/glazing/icons/3.png" alt="#">
+              <a class="plastic_link">Остекление <br>пластиковыми <br>рамами</a>
+            </div>
+            <div class="glazing_block text-center wow fadeInUp" data-wow-delay="0.3s">
+              <img src="assets/img/glazing/icons/4.png" alt="#">
+              <a class="french_link">Французское <br>остекление <br>(панорамное)</a>
+            </div>
+            <div class="glazing_block text-center wow fadeInUp" data-wow-delay="0.4s">
+              <img src="assets/img/glazing/icons/5.png" alt="#">
+              <a class="rise_link">Остекление <br>с выносом</a>
+            </div>
           </div>
-          <div class="glazing_block text-center wow fadeInUp" data-wow-delay="0.1s">
-            <img src="assets/img/glazing/icons/2.png" alt="#">
-            <a class="aluminum_link">Алюминиевое <br>остекление</a>
-          </div>
-          <div class="glazing_block text-center wow fadeInUp" data-wow-delay="0.2s">
-            <img src="assets/img/glazing/icons/3.png" alt="#">
-            <a class="plastic_link">Остекление <br>пластиковыми <br>рамами</a>
-          </div>
-          <div class="glazing_block text-center wow fadeInUp" data-wow-delay="0.3s">
-            <img src="assets/img/glazing/icons/4.png" alt="#">
-            <a class="french_link">Французское <br>остекление <br>(панорамное)</a>
-          </div>
-          <div class="glazing_block text-center wow fadeInUp" data-wow-delay="0.4s">
-            <img src="assets/img/glazing/icons/5.png" alt="#">
-            <a class="rise_link">Остекление <br>с выносом</a>
-          </div>
+          <button class="next arrow"></button>
         </div>
 
         <!-- Tree -->
@@ -346,6 +349,8 @@
         
         <!-- Slider -->
         <div class="decoration_slider">
+          <button class="prev arrow"></button>
+          <div class="slides">
             <div class="decoration_item  wow fadeInUp">
               <div class="internal_link no_click after_click"><a>Внутренняя отделка</a></div>
             </div>
@@ -358,6 +363,8 @@
             <div class="decoration_item wow fadeInUp" data-wow-delay="0.3s">
               <div class="roof_link no_click"><a>Крыша на балкон</a></div>
             </div>
+          </div>
+          <button class="next arrow"></button>
         </div>
 
         <div class="decoration_content">

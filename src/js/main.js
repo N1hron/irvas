@@ -15,8 +15,8 @@ window.addEventListener('DOMContentLoaded', () => {
     createModal('.popup_calc_profile_button', '.popup_calc_end', '.popup_calc_end_close', false)
 
     // Tabs:
-    bindTabs('.glazing', '.glazing_block', '.glazing_content', false, null, 'active')
-    bindTabs('.decoration', '.decoration_item > div', '.decoration_content > .row > div', false, 'after_click')
+    bindTabs('.glazing', '.glazing_block:not(.tns-slide-cloned)', '.glazing_content', false, null, 'active')
+    bindTabs('.decoration', '.decoration_item:not(.tns-slide-cloned) > div', '.decoration_content > .row > div', false, 'after_click')
     bindTabs('.popup_calc_content', '.balcon_icons_img', '.big_img > img', true, 'do_image_more')
 
     // Multi step calculator:

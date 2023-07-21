@@ -155,15 +155,24 @@ textarea:focus {
   background: url(../img/glazing/line.png) 0 0 no-repeat;
 }
 
+.glazing_slider, .decoration_slider {
+  position: relative;
+}
+
+.decoration_slider {
+  padding: 0 40px;
+}
+
 .arrow {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  z-index: 99;
+  z-index: 1;
   width: 2rem;
   height: 2rem;
   border: none;
+  /* background-color: blue; */
 }
 
 .prev {
@@ -584,6 +593,7 @@ textarea:focus {
 .decoration .roof {
   display: none;
 }
+
 
 /*Our works*/
 .works {

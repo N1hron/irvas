@@ -1,73 +1,45 @@
-import $ from 'jquery';
-import 'slick-carousel';
+import { tns } from 'tiny-slider'
 
-$(document).ready(function() {
-    $('.glazing_slider').slick({
-        infinite: true,
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        responsive: [{
-            breakpoint: 1201,
-            settings: {
-                slidesToShow: 4,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 1
-            }
-        }, {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 3,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 2
-            }
-        }, {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 2,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 2
-            }
-        }, {
-            breakpoint: 530,
-            settings: {
-                slidesToShow: 1,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 1
-            }
-        }]
-    });
-    $('.decoration_slider').slick({
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        responsive: [{
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 3,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 1
-            }
-        }, {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 2
-            }
-        }, {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 1,
-                prevArrow: '<button class="prev arrow"></button>',
-                nextArrow: '<button class="next arrow"></button>',
-                slidesToScroll: 1
-            }
-        }]
-    });
-});   
+const commonSettings = {
+    rewind: true,
+    autoplay: false,
+    nav: false,
+}
+
+const glazingSlider = tns({
+    ...commonSettings,
+    container: '.glazing_slider .slides',
+    items: 5,
+    prevButton: '.glazing_slider .prev',
+    nextButton: '.glazing_slider .next',
+    responsive: {
+        '350': {
+            items: 2
+        },
+        '530': {
+            items: 3
+        },
+        '991': {
+            items: 5
+        }
+    }
+})
+
+const decorationSlider = tns({
+    ...commonSettings,
+    container: '.decoration_slider .slides',
+    items: 4,
+    prevButton: '.decoration_slider .prev',
+    nextButton: '.decoration_slider .next',
+    responsive: {
+        '530': {
+            items: 2
+        },
+        '991': {
+            items: 3
+        },
+        '1199': {
+            items: 4
+        }
+    }
+})
