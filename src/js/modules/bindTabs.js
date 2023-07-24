@@ -2,8 +2,7 @@ export default function bindTabs(containerSelector, triggerSelector, contentSele
     const container = document.querySelector(containerSelector),
           triggers = container.querySelectorAll(triggerSelector),
           contents = container.querySelectorAll(contentSelector)
-    console.log(triggers)
-    console.log(contents)
+    
     triggers.forEach((trigger, i) => {  
         trigger.addEventListener('click', () => {
             hideTabs()
@@ -13,7 +12,6 @@ export default function bindTabs(containerSelector, triggerSelector, contentSele
 
     function hideTabs() {
         triggers.forEach((trigger, i) => {
-            console.log(i)
             triggerActiveClass && trigger.classList.remove(triggerActiveClass)
             linkActiveClass && trigger.querySelector('a').classList.remove(linkActiveClass)
             contents[i].style.display = 'none'

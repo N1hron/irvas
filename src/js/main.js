@@ -3,10 +3,12 @@ import createModal from './modules/createModal'
 import bindTabs from './modules/bindTabs'
 import forms from './modules/forms'
 import calculator from './modules/calculator'
+import timer from './modules/timer'
+import images from './modules/images'
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict'
-
+    
     // Modals:
     createModal('.popup_engineer_btn', '.popup_engineer', '.popup_close')
     createModal('.popup_calc_btn', '.popup_calc', '.popup_calc_close', false)
@@ -24,4 +26,10 @@ window.addEventListener('DOMContentLoaded', () => {
     
     // Forms:
     forms(calculatorState, resetCalculator)
+
+    // Timer:
+    timer('#timer', '2023-10-24')
+
+    // Images:
+    images('.works')
 })
