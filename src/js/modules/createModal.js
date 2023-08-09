@@ -25,7 +25,6 @@ export default function createModal(triggerSelector, modalSelector, closeSelecto
 
         function showModalAfterTime(time) {
             setTimeout(() => {
-                console.log(isModalActive)
                 if (!isModalActive) showModal(modal)
             }, time)
         }
